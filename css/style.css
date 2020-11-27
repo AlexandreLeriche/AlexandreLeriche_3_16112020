@@ -1,0 +1,27 @@
+/* Font */
+@font-face {
+  font-family: 'Roboto';
+  src: url("../font/roboto/web fonts/roboto_regular_macroman/Roboto-Regular-webfont.eot") format("eot"), url("../font/roboto/web fonts/roboto_regular_macroman/Roboto-Regular-webfont.ttf") format("ttf"), url("../font/roboto/web fonts/roboto_regular_macroman/Roboto-Regular-webfont.woff") format("woff");
+  font-style: normal;
+  font-weight: normal; }
+@font-face {
+  font-family: 'Shrikhand';
+  src: url("../font/Shrikhand/Shrikhand-Regular.ttf") format("ttf");
+  font-style: normal;
+  font-weight: normal; }
+/* Breakpoints */
+body {
+  font-family: Roboto, Arial, sans-serif; }
+
+h4 {
+  font-family: Shrikhand, Arial, sans-serif;
+  margin: 0;
+  font-size: 1.2em;
+  padding-top: 30px;
+  margin-left: 20px; }
+  @media screen and (min-width: 415px) {
+    h4 {
+      text-align: center;
+      font-size: 1.8em; } }
+
+/*# sourceMappingURL=style.css.map */
