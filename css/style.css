@@ -255,13 +255,43 @@ h3 {
         margin: 0;
         margin-left: 10px;
         font-size: 0.8em; }
+    .thumbnails .restaurants_info .fullHearth {
+      position: absolute;
+      right: 5%;
+      top: 15px;
+      font-size: 1.1em;
+      background: linear-gradient(#FF79DA, #9356DC);
+      background-clip: text;
+      color: transparent; }
     .thumbnails .restaurants_info .emptyHearth {
       position: absolute;
       right: 5%;
       top: 15px;
       font-size: 1.1em;
       z-index: 2; }
+      .thumbnails .restaurants_info .emptyHearth:hover + .stock {
+        animation: filling 2s forwards; }
+      .thumbnails .restaurants_info .emptyHearth:hover {
+        animation: colorChange 1s forwards; }
+    .thumbnails .restaurants_info .stock {
+      height: 20px;
+      width: 20px;
+      background-color: #fff;
+      position: absolute;
+      right: 5%;
+      top: 13px;
+      z-index: 1; }
 
+@keyframes filling {
+  from {
+    transform: translateY(0); }
+  to {
+    transform: translateY(-50px); } }
+@keyframes colorChange {
+  from {
+    color: black; }
+  to {
+    color: rgba(0, 0, 0, 0); } }
 /* Footer */
 footer {
   height: 180px;
@@ -345,5 +375,14 @@ footer {
     @media screen and (max-width: 245px) {
       .menu_restaurants button {
         width: 70%; } }
+
+.thumbnails_menu {
+  background-color: #fff;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-shadow: 5px 5px 5px #d4d4d4;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer; }
 
 /*# sourceMappingURL=style.css.map */
