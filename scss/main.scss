@@ -2,6 +2,11 @@ $primary:#9356DC;
 $secondary:#FF79DA;
 $tertiary:#99E2D0;
 
+$circleCheckWidth: 20%;
+$circleCheckTransitionTime: 1s;
+$textPriceWidth: 70%;
+$hiddenText: 19px;
+
 /* Font */
 @font-face {
     font-family: 'robotoregular';
@@ -490,4 +495,168 @@ footer {
     position: relative;
     overflow: hidden;
     cursor: pointer;
+    >div:first-child {
+        padding: 8px 0 10px 0;
+        width: 100%;
+        transition: width $circleCheckTransitionTime;
+    }
+    p {
+        margin: 0;
+        font-size: 0.9em;
+    }
+    &:hover {
+        >div:first-child {
+            width: 100% - $circleCheckWidth;
+        }
+        .cut {
+            max-height: $hiddenText;
+            opacity: 0;
+            transition: opacity 0s;
+        }
+        .uncut {
+            width: $textPriceWidth - $circleCheckWidth;
+            opacity: 1;
+            transition: opacity 0s, width $circleCheckTransitionTime;
+        }
+        .cutbis {
+            max-height: $hiddenText - 1px;
+            opacity: 0;
+            transition: opacity 0s;
+        }
+        .uncutbis {
+            opacity: 1;
+            transition: opacity 0s;
+        }
+        .checked {
+            right: 0%;
+        }
+        .fa-check-circle {
+            animation: circleRotation 0.5s 0.2s forwards ;
+        }
+    }
+}
+
+@for $i from 1 through 10 {
+    .thumb-#{$i} {
+        animation: menuMagic 0.5s $i*0.1s both;
+    }
+}
+
+@keyframes circleRotation {
+    0% {
+        transform: rotateZ(-360deg);
+    }
+    100% {
+        transform: rotateZ(0deg);
+    }
+}
+
+@keyframes menuMagic {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+.text {
+    width: $textPriceWidth;
+    padding-left: 10px;
+    font-weight: bold;
+}
+
+.cut {
+    opacity: 1;
+    max-height: 50px;
+    transition: opacity 0s $circleCheckTransitionTime, max-height 0s $circleCheckTransitionTime;
+}
+
+.uncut {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    opacity: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    transition: opacity 0s $circleCheckTransitionTime, width $circleCheckTransitionTime;
+}
+
+.priceDescr {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    div {
+        width: $textPriceWidth + 5%;
+        position: relative;
+        height: auto;
+    }
+    p
+    {
+        font-size: 0.8em;
+    }
+    >p {
+        width: 10%;
+        padding-right: 10px;
+        font-size: 0.8em;
+        font-weight: bold;
+    }
+}
+
+.descr {
+    width: 100%;
+    padding-left: 10px;
+}
+
+.cutbis {
+    opacity: 1;
+    max-height: 50px;
+    transition: opacity 0s $circleCheckTransitionTime, max-height 0s $circleCheckTransitionTime;
+}
+
+.uncutbis {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    transition: opacity 0s $circleCheckTransitionTime;
+}
+
+.checked {
+    height: 100%;
+    width: $circleCheckWidth;
+    position: absolute;
+    top: 0;
+    right: -$circleCheckWidth;
+    border-radius: 0 10px 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $tertiary;
+    transition: right $circleCheckTransitionTime;
+}
+
+.fa-check-circle {
+    color: #fff;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    @include bigScreen {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    >div {
+        @include bigScreen {
+            width: 30%;
+        }
+    }
 }
