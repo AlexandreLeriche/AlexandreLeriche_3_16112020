@@ -1,0 +1,62 @@
+@keyframes filling {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-50px);
+    }
+}
+
+@keyframes colorChange {
+    from {
+        color: rgba(0,0,0,1);
+    }
+    to {
+        color: rgba(0,0,0,0);
+    }
+}
+
+@keyframes menuMagic {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes disappear {
+    0% {
+      opacity: 1;
+    }
+    75% {
+      opacity: 1;
+    }
+    99% {
+      z-index:4;
+    }
+    100% {
+      opacity: 0;
+      z-index:-1;
+    }
+}
+
+@keyframes circleRotationLeft {
+    0% {
+      transform: rotateZ(360deg)
+    }
+    100% {
+      transform: rotateZ(0deg)
+    }
+}
+
+@keyframes circleRotationRight {
+    0% {
+        transform: rotateZ(-360deg);
+    }
+    100% {
+        transform: rotateZ(0deg);
+    }
+}

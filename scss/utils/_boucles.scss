@@ -1,0 +1,5 @@
+@for $i from 1 through 10 {
+    .thumb-#{$i} {
+        animation: menuMagic 0.5s $i*0.1s both;
+    }
+}
