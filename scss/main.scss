@@ -531,7 +531,7 @@ footer {
             right: 0%;
         }
         .fa-check-circle {
-            animation: circleRotation 0.5s 0.2s forwards ;
+            animation: circleRotationRight 0.5s 0.2s forwards ;
         }
     }
 }
@@ -539,15 +539,6 @@ footer {
 @for $i from 1 through 10 {
     .thumb-#{$i} {
         animation: menuMagic 0.5s $i*0.1s both;
-    }
-}
-
-@keyframes circleRotation {
-    0% {
-        transform: rotateZ(-360deg);
-    }
-    100% {
-        transform: rotateZ(0deg);
     }
 }
 
@@ -658,5 +649,85 @@ footer {
         @include bigScreen {
             width: 30%;
         }
+    }
+}
+
+.loading {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    position: absolute;
+    background-color: #fff;
+    z-index: 4;
+    animation: disappear 3s linear forwards;
+}
+
+.circle {
+    border: 2px dashed;
+    border-radius: 50%;
+    margin: auto;
+    border-left-color: transparent;
+}
+
+.circleRight {
+    border-right-color: $primary;
+    border-top-color: $primary;
+    border-bottom-color: $primary;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    margin-top: 250px;
+    animation: circleRotationRight 3s linear forwards;
+}
+
+.circleLeft {
+    border-right-color: $tertiary;
+    border-top-color: $tertiary;
+    border-bottom-color: $tertiary;
+    width: 120px;
+    height: 120px;
+    position: relative;
+    top: -115px;
+    animation: circleRotationLeft 3s linear forwards;
+}
+
+#text {
+    color: #000;
+    font-size: 1.2em;
+    position: relative;
+    top: -330px;
+}
+
+@keyframes disappear {
+    0% {
+      opacity: 1;
+    }
+    75% {
+      opacity: 1;
+    }
+    99% {
+      z-index:4;
+    }
+    100% {
+      opacity: 0;
+      z-index:-1;
+    }
+}
+
+@keyframes circleRotationLeft {
+    0% {
+      transform: rotateZ(360deg)
+    }
+    100% {
+      transform: rotateZ(0deg)
+    }
+}
+
+@keyframes circleRotationRight {
+    0% {
+        transform: rotateZ(-360deg);
+    }
+    100% {
+        transform: rotateZ(0deg);
     }
 }

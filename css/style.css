@@ -411,7 +411,7 @@ footer {
   .thumbnails_menu:hover .checked {
     right: 0%; }
   .thumbnails_menu:hover .fa-check-circle {
-    animation: circleRotation 0.5s 0.2s forwards; }
+    animation: circleRotationRight 0.5s 0.2s forwards; }
 
 .thumb-1 {
   animation: menuMagic 0.5s 0.1s both; }
@@ -443,11 +443,6 @@ footer {
 .thumb-10 {
   animation: menuMagic 0.5s 1s both; }
 
-@keyframes circleRotation {
-  0% {
-    transform: rotateZ(-360deg); }
-  100% {
-    transform: rotateZ(0deg); } }
 @keyframes menuMagic {
   0% {
     transform: translateY(50px);
@@ -537,5 +532,67 @@ footer {
   @media screen and (min-width: 1025px) {
     .menu > div {
       width: 30%; } }
+
+.loading {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  position: absolute;
+  background-color: #fff;
+  z-index: 4;
+  animation: disappear 3s linear forwards; }
+
+.circle {
+  border: 2px dashed;
+  border-radius: 50%;
+  margin: auto;
+  border-left-color: transparent; }
+
+.circleRight {
+  border-right-color: #9356DC;
+  border-top-color: #9356DC;
+  border-bottom-color: #9356DC;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  margin-top: 250px;
+  animation: circleRotationRight 3s linear forwards; }
+
+.circleLeft {
+  border-right-color: #99E2D0;
+  border-top-color: #99E2D0;
+  border-bottom-color: #99E2D0;
+  width: 120px;
+  height: 120px;
+  position: relative;
+  top: -115px;
+  animation: circleRotationLeft 3s linear forwards; }
+
+#text {
+  color: #000;
+  font-size: 1.2em;
+  position: relative;
+  top: -330px; }
+
+@keyframes disappear {
+  0% {
+    opacity: 1; }
+  75% {
+    opacity: 1; }
+  99% {
+    z-index: 4; }
+  100% {
+    opacity: 0;
+    z-index: -1; } }
+@keyframes circleRotationLeft {
+  0% {
+    transform: rotateZ(360deg); }
+  100% {
+    transform: rotateZ(0deg); } }
+@keyframes circleRotationRight {
+  0% {
+    transform: rotateZ(-360deg); }
+  100% {
+    transform: rotateZ(0deg); } }
 
 /*# sourceMappingURL=style.css.map */
