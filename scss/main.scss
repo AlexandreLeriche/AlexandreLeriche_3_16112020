@@ -162,7 +162,7 @@ button {
     box-shadow: 5px 5px 5px rgb(220, 220, 220);
     &:hover {
         opacity: 0.8;
-        box-shadow: rgb(110, 110, 110);
+        box-shadow: 5px 5px 5px rgb(110, 110, 110);
     }
     @include smallMobile {
         margin-top: 5px;
@@ -207,7 +207,7 @@ h3 {
         border-radius: 25px;
         padding: 30px 20px;
         background-color: rgb(246, 246, 246);
-        box-shadow: rgb(212, 212, 212);
+        box-shadow: 5px 5px 5px rgb(212, 212, 212);
         @include smallMobile {
             width: 70%;
         }
